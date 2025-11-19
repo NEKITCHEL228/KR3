@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0б viewport-fit=cover">
+    <title>Главная</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <header>
+        <h1 style="justify-self: center;">Никита</h1>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="../pages/projects.html">Проекты</a></li>
+                <li class="nav-item"><a class="nav-link" href="../pages/diary.html">Дневник</a></li>
+                <li class="nav-item"><a class="nav-link active" href="../pages/contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contacts">
+            <h2>Свяжитесь со мной</h2>
+
+            <form class="contacts-form">
+                <div class="contacts-form-name">
+                    <label for="name">Имя: </label>
+                    <input type="text" name="name" id="name" placeholder="Введите ваше имя" required>
+                </div>
+
+                <div class="contacts-form-email">
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email" placeholder="Введите ваш email" required>
+                </div>
+                
+                <div class="contacts-form-message">
+                    <label for="message">Сообщение: </label>
+                    <textarea id="message" class="form-message-textarea" placeholder="Введите ваше сообщение..." rows="6" required></textarea>
+                </div>
+                
+                <button type="submit" id="contacts-form-button">Отправить сообщение</button>
+            </form>
+
+            <div class="contacts-info">
+                <h3 style="margin: 0;">Контакты:</h3>
+                <div class="contacts-info-text">
+                    <p style="margin: 0;">student@edu.ru</p>
+                    <p style="margin: 0;">GitHub: NEKITCHEL228</p>
+                    <p style="margin: 0;">Город, Страна</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-text">@ 2025 Контакты</p>
+    </footer>
+</body>
+</html>
