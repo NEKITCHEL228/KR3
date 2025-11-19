@@ -1,9 +1,9 @@
-#diary-courses-button{
+#diary-courses-button {
     width: 40%;
     justify-self: center;
 }
 
-#diary-courses-div-input{
+#diary-courses-div-input {
     margin-top: 7px;
     width: 100%;
     height: auto;
@@ -14,7 +14,27 @@
     align-items: stretch;
 }
 
-.accept-button{
+.diary-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.diary-form-window{
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 300px;
+}
+
+.accept-button {
     background: url('../images/icons/check-lg.svg');
     height: 20px;
     width: 20px;
