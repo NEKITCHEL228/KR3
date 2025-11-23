@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0б viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewportfit=cover">
     <title>Главная</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-    <header>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    <header class="main-header">
         <h1 style="justify-self: center;">Никита</h1>
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/projects.html">Проекты</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/diary.html">Дневник</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
+
     </header>
 
-    <main>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/projects.html">Проекты</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/diary.html">Дневник</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <main id="main">
         <div class="main">
             <div class="main-info">
                 <div class="main-info-photo">
                     <img src="images/photo.jpg" alt="Photo">
                 </div>
-                
+
                 <div class="main-info-text">
                     <p>Привет я студент группы ЭФБО-99-99 Увлекаюсь веб разработкой</p>
                     <p></p>
                     <a href="assets/resume.pdf" download>Скачать резюме</a>
                 </div>
             </div>
-            
+
             <div class="main-skills">
                 <h2 style="justify-self: center;">Мои навыки</h2>
 
@@ -47,12 +52,12 @@
                             <label for="JavaScript">JavaScript</label>
                             <progress id="JavaScript" max="100" value="80">80%</progress><span>80%</span>
                         </div>
-                        
+
                         <div class="Bootstrap">
                             <label for="Bootstrap">Bootstrap</label>
                             <progress id="Bootstrap" max="100" value="85">85%</progress><span>85%</span>
                         </div>
-                        
+
                         <div class="React">
                             <label for="React">React</label>
                             <progress id="React" max="100" value="30">30%</progress><span>30%</span>
@@ -77,8 +82,9 @@
         </div>
     </main>
 
-    <footer>
+    <footer id="footer">
         <p class="footer-text">@ 2025 Контакты</p>
     </footer>
 </body>
+
 </html>

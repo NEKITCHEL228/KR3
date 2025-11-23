@@ -1,21 +1,80 @@
 :root {
-  --color-main: #ffffff;
-  --color-text: black;
+  --color-main: #f8fafc;
+  --color-text: #0b1020;
+
+  color-scheme: light dark;
+}
+
+html {
+  height: 100%;
 }
 
 body {
   margin: 0;
   font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sansserif;
-  background: var(--color-main);
+  background: yellow;
   color: var(--color-text);
+  height: 100%;
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: -100%;
+  z-index: 10000;
+  padding: 0.5rem 0.75rem;
+  background: #111;
+  color: #fff;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  inset-block-start: 1rem;
+}
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+a,
+button,
+input,
+textarea {
+  outline-offset: 2px;
+}
+/* Крупные цели на устройствах с pointer:coarse */
+@media (pointer: coarse) {
+  a,
+  button,
+  .nav__link {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+  }
+}
+
+.main-header {
+  top: 0;
+  background: red;
+  /* Прибавки для вырезов/жестовых панелей — только где они есть */
+  padding-block-start: calc(0.75rem + env(safe-area-inset-top));
+  padding-block-end: 0.75rem;
+  padding-inline-start: calc(var(--space-md, 1rem) + env(safe-area-insetleft));
+  padding-inline-end: calc(var(--space-md, 1rem) + env(safe-area-insetright));
+  
 }
 
 .nav {
-  background: gray;
-  grid-area: nav;
+  top: 0;
+  position: sticky;
+  background: #2563eb;
+  color: #fff;
+  z-index: 100;
+  isolation: isolate;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .nav-list {
+  margin-top: 0;
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -40,6 +99,14 @@ body {
 
 .active {
   background: darkslategrey;
+}
+
+main {
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  flex-direction: column;
+  padding-top: 20px;
 }
 
 .main-info {
@@ -96,6 +163,14 @@ body {
   min-height: 100px;
   max-height: 100px;
   padding: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
 }
 
 .project-button {

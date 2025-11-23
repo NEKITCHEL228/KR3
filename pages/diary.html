@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0б viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewportfit=cover">
     <title>Главная</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/diaryButton.css">
 </head>
+
 <body>
-    <header>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    <header class="main-header">
         <h1 style="justify-self: center;">Никита</h1>
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="../pages/projects.html">Проекты</a></li>
-                <li class="nav-item"><a class="nav-link active" href="../pages/diary.html">Дневник</a></li>
-                <li class="nav-item"><a class="nav-link" href="../pages/contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
     </header>
+
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="../pages/projects.html">Проекты</a></li>
+            <li class="nav-item"><a class="nav-link active" href="../pages/diary.html">Дневник</a></li>
+            <li class="nav-item"><a class="nav-link" href="../pages/contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
 
     <main>
         <div class="diary">
             <h2 style="justify-self: center;">Мой учебный прогресс</h2>
             <div class="diary-window">
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
+                <p class="diary-window-record">Учусь...</p>
             </div>
 
             <h2 style="justify-self: center;">Текущие курсы</h2>
@@ -37,17 +38,17 @@
                         <label for="Web-developmentcourse">Веб-разработка</label>
                         <progress id="Web-developmentcourse" max="100" value="90">90%</progress><span>90%</span>
                     </div>
-                    
+
                     <div class="JavaScriptcourse">
                         <label for="JavaScriptcourse">JavaScript</label>
                         <progress id="JavaScriptcourse" max="100" value="70">70%</progress><span>70%</span>
                     </div>
-                    
+
                     <div class="Reactcourse">
                         <label for="Reactcourse">React</label>
                         <progress id="Reactcourse" max="100" value="50">50%</progress><span>50%</span>
                     </div>
-                    
+
                 </ul>
 
                 <button id="diary-courses-button">Добавить запись</button>
@@ -63,4 +64,5 @@
 
     <script src="../scripts/diaryButton.js"></script>
 </body>
+
 </html>

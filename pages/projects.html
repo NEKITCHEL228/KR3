@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0б viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewportfit=cover">
     <title>Главная</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
+
 <body>
-    <header>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    <header class="main-header">
         <h1 style="justify-self: center;">Никита</h1>
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link active" href="../pages/projects.html">Проекты</a></li>
-                <li class="nav-item"><a class="nav-link" href="../pages/diary.html">Дневник</a></li>
-                <li class="nav-item"><a class="nav-link" href="../pages/contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
     </header>
+
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link active" href="../pages/projects.html">Проекты</a></li>
+            <li class="nav-item"><a class="nav-link" href="../pages/diary.html">Дневник</a></li>
+            <li class="nav-item"><a class="nav-link" href="../pages/contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
 
     <main>
         <div class="projects">
@@ -32,28 +36,34 @@
                 </div>
             </div>
 
-            <div class="my-projects">
-                <div class="project">
-                    <button class="project-button">project 1</button>
-                </div>
+            <div class="my-projects-area">
+                <div class="my-projects">
+                    <div class="project 1 visible HTML">
+                        <button class="project-button">project 1</button>
+                    </div>
 
-                <div class="project">
-                    <button class="project-button">project 2</button>
-                </div>
+                    <div class="project 2 visible HTML JS">
+                        <button class="project-button">project 2</button>
+                    </div>
 
-                <div class="project">
-                    <button class="project-button">project 3</button>
-                </div>
+                    <div class="project 3 visible JS React">
+                        <button class="project-button">project 3</button>
+                    </div>
 
-                <div class="project">
-                    <button class="project-button">project 4</button>
+                    <div class="project 4 visible React">
+                        <button class="project-button">project 4</button>
+                    </div>
                 </div>
             </div>
+
         </div>
     </main>
+
+    <script src="../scripts/filters.js"></script>
 
     <footer>
         <p class="footer-text">@ 2025 Контакты</p>
     </footer>
 </body>
+
 </html>

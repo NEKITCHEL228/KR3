@@ -72,6 +72,7 @@ function addRecord() {
                 if (text === "") {return;}
 
                 const record = document.createElement('p');
+                record.classList.add('diary-window-record');
                 record.textContent = text;
 
                 parent.appendChild(record);
