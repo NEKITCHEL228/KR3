@@ -3,19 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewportfit=cover">
-    <title>Главная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Дневник</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/diaryButton.css">
 </head>
 
-<body>
+<body class="page">
+
     <a class="skip-link" href="#main">Перейти к основному содержимому</a>
-    <header class="main-header">
-        <h1 style="justify-self: center;">Никита</h1>
+
+    <header class="main-header" role="banner">
+        <h1 class="site-title">Никита</h1>
     </header>
 
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Основная навигация">
         <ul class="nav-list">
             <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
             <li class="nav-item"><a class="nav-link" href="../pages/projects.html">Проекты</a></li>
@@ -24,42 +26,50 @@
         </ul>
     </nav>
 
-    <main>
-        <div class="diary">
-            <h2 style="justify-self: center;">Мой учебный прогресс</h2>
-            <div class="diary-window">
-                <p class="diary-window-record">Учусь...</p>
-            </div>
+    <main id="main" class="main" role="main">
+        <div class="container diary">
 
-            <h2 style="justify-self: center;">Текущие курсы</h2>
-            <div class="diary-courses">
-                <ul class="diary-corses-list">
-                    <div class="Web-developmentcourse">
-                        <label for="Web-developmentcourse">Веб-разработка</label>
-                        <progress id="Web-developmentcourse" max="100" value="90">90%</progress><span>90%</span>
+            <!-- Раздел «Учебный прогресс» -->
+            <section class="diary-progress" aria-labelledby="progress-title">
+                <h2 id="progress-title" class="section-title">Мой учебный прогресс</h2>
+                <div class="diary-window">
+                    <p class="diary-window-record">Учусь...</p>
+                </div>
+            </section>
+
+            <!-- Раздел «Текущие курсы» -->
+            <section class="diary-courses-area" aria-labelledby="courses-title">
+                <h2 id="courses-title" class="section-title">Текущие курсы</h2>
+
+                <div class="diary-courses" role="list">
+                    <div class="course-grid">
+                        <div class="course-item">
+                            <label for="Web-developmentcourse">Веб-разработка</label>
+                            <progress id="Web-developmentcourse" max="100" value="90">90%</progress>
+                            <span>90%</span>
+                        </div>
+                        <div class="course-item">
+                            <label for="JavaScriptcourse">JavaScript</label>
+                            <progress id="JavaScriptcourse" max="100" value="70">70%</progress>
+                            <span>70%</span>
+                        </div>
+                        <div class="course-item">
+                            <label for="Reactcourse">React</label>
+                            <progress id="Reactcourse" max="100" value="50">50%</progress>
+                            <span>50%</span>
+                        </div>
                     </div>
 
-                    <div class="JavaScriptcourse">
-                        <label for="JavaScriptcourse">JavaScript</label>
-                        <progress id="JavaScriptcourse" max="100" value="70">70%</progress><span>70%</span>
-                    </div>
+                    <button id="diary-courses-button" class="button">Добавить запись</button>
+                    <div id="diary-courses-div-input"></div>
+                </div>
+            </section>
 
-                    <div class="Reactcourse">
-                        <label for="Reactcourse">React</label>
-                        <progress id="Reactcourse" max="100" value="50">50%</progress><span>50%</span>
-                    </div>
-
-                </ul>
-
-                <button id="diary-courses-button">Добавить запись</button>
-                <div id="diary-courses-div-input"></div>
-
-            </div>
         </div>
     </main>
 
-    <footer>
-        <p class="footer-text">@ 2025 Контакты</p>
+    <footer id="footer" role="contentinfo">
+        <p class="footer-text">© 2025 Контакты</p>
     </footer>
 
     <script src="../scripts/diaryButton.js"></script>

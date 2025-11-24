@@ -3,18 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewportfit=cover">
-    <title>Главная</title>
+
+    <!-- FIX: viewport-fit -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Проекты</title>
+
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body>
+
     <a class="skip-link" href="#main">Перейти к основному содержимому</a>
-    <header class="main-header">
-        <h1 style="justify-self: center;">Никита</h1>
+
+    <!-- FIX: header центрируется через flex -->
+    <header class="main-header" role="banner">
+        <h1 class="site-title">Никита</h1>
     </header>
 
-    <nav class="nav">
+    <!-- FIX: aria-label добавлен -->
+    <nav class="nav" role="navigation" aria-label="Основная навигация">
         <ul class="nav-list">
             <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
             <li class="nav-item"><a class="nav-link active" href="../pages/projects.html">Проекты</a></li>
@@ -23,47 +31,57 @@
         </ul>
     </nav>
 
-    <main>
-        <div class="projects">
-            <div class="projects-header">
-                <h2>Мои проекты</h2>
+    <main id="main" role="main">
 
-                <div class="filter-buttons">
-                    <button id="All">Все</button>
-                    <button id="HTML">HTML</button>
-                    <button id="JS">JS</button>
-                    <button id="React">React</button>
-                </div>
-            </div>
+        <!-- FIX: общий центрирующий контейнер -->
+        <div class="main">
 
-            <div class="my-projects-area">
-                <div class="my-projects">
-                    <div class="project 1 visible HTML">
-                        <button class="project-button">project 1</button>
-                    </div>
+            <section class="projects">
 
-                    <div class="project 2 visible HTML JS">
-                        <button class="project-button">project 2</button>
-                    </div>
+                <div class="projects-header">
+                    <h2>Мои проекты</h2>
 
-                    <div class="project 3 visible JS React">
-                        <button class="project-button">project 3</button>
-                    </div>
-
-                    <div class="project 4 visible React">
-                        <button class="project-button">project 4</button>
+                    <div class="filter-buttons">
+                        <button id="All">Все</button>
+                        <button id="HTML">HTML</button>
+                        <button id="JS">JS</button>
+                        <button id="React">React</button>
                     </div>
                 </div>
-            </div>
+
+                <!-- FIX: обёртка центрируется, сетка не вылезает -->
+                <div class="my-projects-area">
+                    <div class="my-projects">
+                        <article class="project visible HTML">
+                            <button class="project-button">project 1</button>
+                        </article>
+
+                        <article class="project visible HTML JS">
+                            <button class="project-button">project 2</button>
+                        </article>
+
+                        <article class="project visible JS React">
+                            <button class="project-button">project 3</button>
+                        </article>
+
+                        <article class="project visible React">
+                            <button class="project-button">project 4</button>
+                        </article>
+                    </div>
+                </div>
+
+            </section>
 
         </div>
     </main>
 
     <script src="../scripts/filters.js"></script>
 
-    <footer>
-        <p class="footer-text">@ 2025 Контакты</p>
+    <!-- FIX: footer safe-area -->
+    <footer id="footer" role="contentinfo">
+        <p class="footer-text">© 2025 Контакты</p>
     </footer>
+
 </body>
 
 </html>

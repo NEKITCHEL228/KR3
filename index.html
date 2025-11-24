@@ -3,22 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
     <title>Главная</title>
-
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
     <a class="skip-link" href="#main">Перейти к основному содержимому</a>
-    <header class="main-header">
-        <h1 style="justify-self: center;">Никита</h1>
 
+    <header class="main-header" role="banner">
+        <h1 class="site-title">Никита</h1>
     </header>
 
-    <nav class="nav" aria-label="Основная навигация">
+    <nav class="nav" aria-label="Основная навигация" role="navigation">
         <ul class="nav-list">
             <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
             <li class="nav-item"><a class="nav-link" href="pages/projects.html">Проекты</a></li>
@@ -27,67 +24,87 @@
         </ul>
     </nav>
 
-    <main id="main">
-        <div class="main">
-            <div class="main-info">
-                
+    <main id="main" role="main">
+        <div class="container main">
+            <section class="main-info" aria-labelledby="about-me">
                 <div class="main-info-photo">
-                    <img src="images/photo.jpg" alt="Photo" width="300" height="400">
+                    <picture>
+                        <!-- AVIF -->
+                        <source type="image/avif" srcset="
+                images/avif/photo-150.avif 150w,
+                images/avif/photo-300.avif 300w,
+                images/avif/photo-600.avif 600w,
+                images/avif/photo-default.avif 1200w
+              " sizes="(max-width: 768px) 300px, 700px">
+
+                        <!-- WebP -->
+                        <source type="image/webp" srcset="
+                images/webp/photo-150.webp 150w,
+                images/webp/photo-300.webp 300w,
+                images/webp/photo-600.webp 600w,
+                images/webp/photo-default.webp 1200w
+              " sizes="(max-width: 768px) 300px, 700px">
+
+                        <!-- JPEG fallback -->
+                        <img src="images/jpg/photo-300.jpg" srcset="
+                images/jpg/photo-150.jpg 150w,
+                images/jpg/photo-300.jpg 300w,
+                images/jpg/photo-600.jpg 600w,
+                images/jpg/photo-default.jpg 1200w
+              " sizes="(max-width: 768px) 300px, 700px" width="700" height="933" alt="Портрет студента" loading="lazy"
+                            decoding="async">
+                    </picture>
                 </div>
 
-                <div class="main-info-text">
-                    <p>Привет я студент группы ЭФБО-99-99 Увлекаюсь веб разработкой</p>
-                    <p></p>
-                    <a href="assets/resume.pdf" download>Скачать резюме</a>
+                <div class="main-info-text" id="about-me">
+                    <p>Привет, я студент группы ЭФБО-99-99. Увлекаюсь веб-разработкой.</p>
+                    <a class="download-resume" href="assets/resume.pdf" download>Скачать резюме</a>
                 </div>
-            </div>
+            </section>
 
-            <div class="main-skills">
-                <h2 style="justify-self: center;">Мои навыки</h2>
+            <section class="main-skills" aria-labelledby="skills-title">
+                <h2 id="skills-title">Мои навыки</h2>
 
                 <div class="skills">
                     <ul class="skills-list">
-                        <div class="HTML/CSS">
-                            <label for="HTML/CSS">HTML/CSS</label>
-                            <progress id="HTML/CSS" max="100" value="90">90%</progress><span>90%</span>
-                        </div>
+                        <li class="skill-item">
+                            <label for="HTMLCSS">HTML/CSS</label>
+                            <progress id="HTMLCSS" max="100" value="90">90%</progress><span>90%</span>
+                        </li>
 
-                        <div class="JavaScript">
+                        <li class="skill-item">
                             <label for="JavaScript">JavaScript</label>
                             <progress id="JavaScript" max="100" value="80">80%</progress><span>80%</span>
-                        </div>
+                        </li>
 
-                        <div class="Bootstrap">
+                        <li class="skill-item">
                             <label for="Bootstrap">Bootstrap</label>
                             <progress id="Bootstrap" max="100" value="85">85%</progress><span>85%</span>
-                        </div>
+                        </li>
 
-                        <div class="React">
+                        <li class="skill-item">
                             <label for="React">React</label>
                             <progress id="React" max="100" value="30">30%</progress><span>30%</span>
-                        </div>
+                        </li>
                     </ul>
                 </div>
-            </div>
+            </section>
 
-            <div class="best-projects">
-                <div class="project">
-                    <button class="project-button">project 1</button>
+            <section class="best-projects" aria-labelledby="projects-title">
+                <h2 id="best-projects-title" class="visually-hidden">Лучшие проекты</h2>
+
+                <div class="best-projects-grid">
+                    <article class="project"><button class="project-button">project 1</button></article>
+                    <article class="project"><button class="project-button">project 2</button></article>
+                    <article class="project"><button class="project-button">project 3</button></article>
                 </div>
 
-                <div class="project">
-                    <button class="project-button">project 2</button>
-                </div>
-
-                <div class="project">
-                    <button class="project-button">project 3</button>
-                </div>
-            </div>
+            </section>
         </div>
     </main>
 
-    <footer id="footer">
-        <p class="footer-text">@ 2025 Контакты</p>
+    <footer id="footer" role="contentinfo">
+        <p class="footer-text">© 2025 Контакты</p>
     </footer>
 </body>
 

@@ -5,9 +5,21 @@
     margin-bottom: 6px;
 }
 
-#diary-courses-button {
-    width: 40%;
-    justify-self: center;
+/* Кнопка добавления записи */
+.button, #diary-courses-button {
+    display: inline-block;
+    font: inherit;
+    padding-block: max(.5rem, calc((44px - 1em)/2));
+    padding-inline: 1rem;
+    border-radius: .5rem;
+    border: 1px solid #2563eb;
+    background-color: #2563eb;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease;
+}
+.button:hover, #diary-courses-button:hover {
+    background-color: #1d4ed8;
 }
 
 #diary-courses-div-input {

@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewportfit=cover">
-    <title>Главная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Контакты</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/contacts.css">
 </head>
 
 <body>
     <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
     <header class="main-header">
-        <h1 style="justify-self: center;">Никита</h1>
+        <h1>Никита</h1>
     </header>
 
     <nav class="nav">
@@ -23,45 +25,46 @@
         </ul>
     </nav>
 
-    <main>
-        <div class="contacts">
-            <h2>Свяжитесь со мной</h2>
+    <main id="main" class="container">
+        <section class="contacts">
+            <h2 class="section-title">Свяжитесь со мной</h2>
 
             <form class="contacts-form">
                 <div class="contacts-form-name">
-                    <label for="name">Имя: </label>
+                    <label for="name">Имя</label>
                     <input type="text" name="name" id="name" placeholder="Введите ваше имя" required>
                 </div>
 
                 <div class="contacts-form-email">
-                    <label for="email">Email: </label>
+                    <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="Введите ваш email" required>
                 </div>
 
                 <div class="contacts-form-message">
-                    <label for="message">Сообщение: </label>
+                    <label for="message">Сообщение</label>
                     <textarea id="message" class="form-message-textarea" placeholder="Введите ваше сообщение..."
-                        rows="6" required></textarea>
+                        required></textarea>
                 </div>
 
                 <button type="submit" id="contacts-form-button">Отправить сообщение</button>
             </form>
 
             <div class="contacts-info">
-                <h3 style="margin: 0;">Контакты:</h3>
+                <h3>Контакты:</h3>
                 <div class="contacts-info-text">
-                    <p style="margin: 0;">student@edu.ru</p>
-                    <p style="margin: 0;">GitHub: NEKITCHEL228</p>
-                    <p style="margin: 0;">Город, Страна</p>
+                    <p>student@edu.ru</p>
+                    <p>GitHub: NEKITCHEL228</p>
+                    <p>Город, Страна</p>
                 </div>
-
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer>
-        <p class="footer-text">@ 2025 Контакты</p>
+    <footer id="footer" role="contentinfo">
+        <p class="footer-text">© 2025 Контакты</p>
     </footer>
+
+    <script src="../scripts/contactsButton.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,68 @@
+/* Общие стили совпадают с style.css, добавляем специфичные для contacts */
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.contacts-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.contacts-form label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.contacts-form input,
+.contacts-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+#contacts-form-button {
+    width: 50%;
+    max-width: 200px;
+    align-self: center;
+    padding: 0.5rem 1rem;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contacts-form-button:hover {
+    background: #1d4ed8;
+}
+
+.contacts-info {
+    text-align: center;
+}
+
+.contacts-info-text p {
+    margin: 0.25rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #contacts-form-button {
+        width: 70%;
+    }
+}
