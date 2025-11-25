@@ -2,11 +2,12 @@
 <html lang="ru">
 
 <head>
+    <meta name="description"
+        content="Сайт-портфолио Никиты, студента группы ЭФБО-99-99. Увлекаюсь веб-разработкой, HTML/CSS, JavaScript, React. Посмотрите мои проекты и навыки.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Контакты</title>
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/contacts.css">
 </head>
 
 <body>
@@ -16,47 +17,75 @@
         <h1>Никита</h1>
     </header>
 
-    <nav class="nav">
-        <ul class="nav-list">
+    <nav class="nav" aria-label="Основная навигация">
+        <ul class="main-nav-list">
             <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
             <li class="nav-item"><a class="nav-link" href="../pages/projects.html">Проекты</a></li>
             <li class="nav-item"><a class="nav-link" href="../pages/diary.html">Дневник</a></li>
+        </ul>
+
+        <ul class="second-nav-list">
             <li class="nav-item"><a class="nav-link active" href="../pages/contacts.html">Контакты</a></li>
         </ul>
     </nav>
 
-    <main id="main" class="container">
+    <main id="main">
         <section class="contacts">
-            <h2 class="section-title">Свяжитесь со мной</h2>
+            <div class="contacts-flex">
 
-            <form class="contacts-form">
-                <div class="contacts-form-name">
-                    <label for="name">Имя</label>
-                    <input type="text" name="name" id="name" placeholder="Введите ваше имя" required>
-                </div>
+                <section class="contacts-form-section">
+                    <h2 class="section-title">Свяжитесь с нами</h2>
 
-                <div class="contacts-form-email">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Введите ваш email" required>
-                </div>
+                    <form class="contacts-form">
+                        <div class="contacts-form-name">
+                            <label for="name">Имя</label>
+                            <input type="text" name="name" id="name" placeholder="Введите ваше имя" required>
+                        </div>
 
-                <div class="contacts-form-message">
-                    <label for="message">Сообщение</label>
-                    <textarea id="message" class="form-message-textarea" placeholder="Введите ваше сообщение..."
-                        required></textarea>
-                </div>
+                        <div class="contacts-form-email">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Введите ваш email" required>
+                        </div>
 
-                <button type="submit" id="contacts-form-button">Отправить сообщение</button>
-            </form>
+                        <div class="contacts-form-message">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" class="form-message-textarea" placeholder="Введите ваше сообщение..."
+                                required></textarea>
+                        </div>
 
-            <div class="contacts-info">
-                <h3>Контакты:</h3>
-                <div class="contacts-info-text">
-                    <p>student@edu.ru</p>
-                    <p>GitHub: NEKITCHEL228</p>
-                    <p>Город, Страна</p>
-                </div>
+                        <button type="submit" id="contacts-form-button">Отправить сообщение</button>
+                    </form>
+                </section>
+
+                <section class="contacts-map-section" aria-labelledby="section-title">
+                    <h2 id="section-title" class="section-title">Наш адресс</h2>
+
+                    <iframe
+                        class="contacts-map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.372949944431!2d37.61729991582997!3d55.755826680553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JzQvtGB0LrQstCw!5e0!3m2!1sru!2sru!4v1234567890"
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="Карта с нашим местоположением">
+                    </iframe>
+
+                    <button type="button" id="contacts-map-button" class="button">Скопировать адресс</button>
+                </section>
+
+                <section class="contacts-email-section">
+                    <h2 class="section-title">Почты для связи</h2>
+                    <div class="contacts-email-flex">
+                        <p>pochta1@gmail.com</p>
+                        <p>pochta2@gmail.com</p>
+                        <p>pochta3@gmail.com</p>
+                        <p>pochta4@gmail.com</p>
+                        <p>pochta5@gmail.com</p>
+                        <p>pochta6@gmail.com</p>
+                        <p>pochta7@gmail.com</p>
+                        <p>pochta8@gmail.com</p>
+                    </div>
+                </section>
+
             </div>
+
         </section>
     </main>
 

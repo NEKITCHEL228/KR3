@@ -2,6 +2,8 @@
 <html lang="ru">
 
 <head>
+    <meta name="description"
+        content="Сайт-портфолио Никиты, студента группы ЭФБО-99-99. Увлекаюсь веб-разработкой, HTML/CSS, JavaScript, React. Посмотрите мои проекты и навыки.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Главная</title>
@@ -15,17 +17,20 @@
         <h1 class="site-title">Никита</h1>
     </header>
 
-    <nav class="nav" aria-label="Основная навигация" role="navigation">
-        <ul class="nav-list">
+    <nav class="nav" aria-label="Основная навигация">
+        <ul class="main-nav-list">
             <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
             <li class="nav-item"><a class="nav-link" href="pages/projects.html">Проекты</a></li>
             <li class="nav-item"><a class="nav-link" href="pages/diary.html">Дневник</a></li>
+        </ul>
+
+        <ul class="second-nav-list">
             <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
         </ul>
     </nav>
 
-    <main id="main" role="main">
-        <div class="container main">
+    <main id="main">
+        <div class="main">
             <section class="main-info" aria-labelledby="about-me">
                 <div class="main-info-photo">
                     <picture>
@@ -56,16 +61,17 @@
                     </picture>
                 </div>
 
-                <div class="main-info-text" id="about-me">
+                <div class="main-info-info" id="about-me">
                     <p>Привет, я студент группы ЭФБО-99-99. Увлекаюсь веб-разработкой.</p>
-                    <a class="download-resume" href="assets/resume.pdf" download>Скачать резюме</a>
+                    <button class="button" id="resume-button">Скачать резюме</button>
                 </div>
             </section>
+            <script src="scripts/downloadResumeButton.js"></script>
 
-            <section class="main-skills" aria-labelledby="skills-title">
+            <section class="main-skills-area" aria-labelledby="skills-title">
                 <h2 id="skills-title">Мои навыки</h2>
 
-                <div class="skills">
+                <div class="main-skills">
                     <ul class="skills-list">
                         <li class="skill-item">
                             <label for="HTMLCSS">HTML/CSS</label>
@@ -88,9 +94,10 @@
                         </li>
                     </ul>
                 </div>
+
             </section>
 
-            <section class="best-projects" aria-labelledby="projects-title">
+            <section class="best-projects-area" aria-labelledby="best-projects-title">
                 <h2 id="best-projects-title" class="visually-hidden">Лучшие проекты</h2>
 
                 <div class="best-projects-grid">

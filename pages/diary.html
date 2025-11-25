@@ -2,6 +2,7 @@
 <html lang="ru">
 
 <head>
+    <meta name="description" content="Сайт-портфолио Никиты, студента группы ЭФБО-99-99. Увлекаюсь веб-разработкой, HTML/CSS, JavaScript, React. Посмотрите мои проекты и навыки.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Дневник</title>
@@ -17,18 +18,21 @@
         <h1 class="site-title">Никита</h1>
     </header>
 
-    <nav class="nav" role="navigation" aria-label="Основная навигация">
-        <ul class="nav-list">
+    <nav class="nav" aria-label="Основная навигация">
+        <ul class="main-nav-list">
             <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
             <li class="nav-item"><a class="nav-link" href="../pages/projects.html">Проекты</a></li>
             <li class="nav-item"><a class="nav-link active" href="../pages/diary.html">Дневник</a></li>
+        </ul>
+
+        <ul class="second-nav-list">
             <li class="nav-item"><a class="nav-link" href="../pages/contacts.html">Контакты</a></li>
         </ul>
     </nav>
 
-    <main id="main" class="main" role="main">
+    <main id="main" class="main">
         <div class="container diary">
-
+            <button id="diary-courses-button" class="button">Добавить запись</button>
             <!-- Раздел «Учебный прогресс» -->
             <section class="diary-progress" aria-labelledby="progress-title">
                 <h2 id="progress-title" class="section-title">Мой учебный прогресс</h2>
@@ -41,27 +45,25 @@
             <section class="diary-courses-area" aria-labelledby="courses-title">
                 <h2 id="courses-title" class="section-title">Текущие курсы</h2>
 
-                <div class="diary-courses" role="list">
-                    <div class="course-grid">
-                        <div class="course-item">
+                <div class="diary-courses">
+                    <ul class="course-flex" role="list">
+                        <li class="course-item" role="listitem">
                             <label for="Web-developmentcourse">Веб-разработка</label>
                             <progress id="Web-developmentcourse" max="100" value="90">90%</progress>
                             <span>90%</span>
-                        </div>
-                        <div class="course-item">
+                        </li>
+                        <li class="course-item" role="listitem">
                             <label for="JavaScriptcourse">JavaScript</label>
                             <progress id="JavaScriptcourse" max="100" value="70">70%</progress>
                             <span>70%</span>
-                        </div>
-                        <div class="course-item">
+                        </li>
+                        <li class="course-item" role="listitem">
                             <label for="Reactcourse">React</label>
                             <progress id="Reactcourse" max="100" value="50">50%</progress>
                             <span>50%</span>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
 
-                    <button id="diary-courses-button" class="button">Добавить запись</button>
-                    <div id="diary-courses-div-input"></div>
                 </div>
             </section>
 

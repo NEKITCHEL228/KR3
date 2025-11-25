@@ -76,7 +76,7 @@ function addRecord() {
         const courseButton = document.getElementById('course-button');
         if (courseButton) {
             courseButton.addEventListener('click', () => {
-                const parent = document.querySelector('.course-grid');
+                const parent = document.querySelector('.course-flex');
                 const buttonElement = document.getElementById('diary-courses-button');
 
                 const course = document.getElementById('course-text').value.trim();
@@ -85,6 +85,7 @@ function addRecord() {
 
                 const record = document.createElement('div');
                 record.classList.add('course-item'); // ключевой момент — копируем класс
+                record.role = "griditem";
 
                 // создаем label с уникальным id
                 const inputId = 'course-' + Date.now(); 

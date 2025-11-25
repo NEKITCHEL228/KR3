@@ -9,7 +9,9 @@ html {
   height: 100%;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -18,7 +20,9 @@ body {
   font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sansserif;
   background: var(--color-main);
   color: var(--color-text);
-  height: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
 }
 
 /* ---- skip link ---- */
@@ -54,6 +58,23 @@ textarea {
   outline-offset: 2px;
 }
 
+.button {
+  display: inline-block;
+  font: inherit;
+  padding-block: max(.5rem, calc((44px - 1em)/2));
+  padding-inline: 1rem;
+  border-radius: .5rem;
+  border: 1px solid #2563eb;
+  background-color: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.button:hover {
+  background-color: #1d4ed8;
+}
+
 /* Touch targets */
 @media (pointer: coarse) {
 
@@ -80,21 +101,30 @@ textarea {
 /* ---- nav ---- */
 
 .nav {
+  display: flex;
+  flex-direction: row;
   position: sticky;
   top: 0;
   background: #2563eb;
   color: #fff;
   z-index: 100;
   isolation: isolate;
+  justify-content: space-between;
   box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
 }
 
-.nav-list {
+.main-nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
+}
+
+.second-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-item {
@@ -127,21 +157,20 @@ main {
 }
 
 .main {
-  max-width: 1200px;
+  max-width: 80vw;
   margin-inline: auto;
   /* центрирование */
   width: 100%;
 }
 
-.main-skills h2,
-.best-projects h2 {
+.main-skills-area h2,
+.best-projects-area h2 {
   text-align: center;
 }
 
 .main-info {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -155,15 +184,15 @@ main {
 
 .main-info-photo img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 20rem;
+  object-fit:cover;
   aspect-ratio: 3 / 4;
   border-radius: .5rem;
 }
 
 /* ---- text ---- */
 
-.main-info-text {
+.main-info-info {
   flex: 1 1 300px;
   padding: 30px 30px 10px 30px;
 }
@@ -171,28 +200,52 @@ main {
 /* ---- skills ---- */
 
 .skills-list {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.5rem;
+  list-style: none;
 }
 
 .skill-item {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: .75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  min-width: 0;
+  width: 100%;
+}
+
+.skill-item label {
+  display: block;
+  margin-bottom: .25rem;
+  font-weight: 500;
+}
+
+.skill-item progress {
+  width: 100%;
+  height: 1rem;
+  margin-bottom: .25rem;
+}
+
+.skill-item span {
+  display: inline-block;
+  font-size: .875rem;
+  color: #1e293b;
 }
 
 /* ---- projects grid ---- */
 
-.best-projects {
+.best-projects-area {
   display: block;
-  max-width: 1200px;
+  max-width: 80vw;
   margin-inline: auto;
 }
 
 .best-projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 400px));
   gap: 15px;
   padding: 20px;
 
@@ -210,11 +263,12 @@ main {
 
 .project-button {
   width: 100%;
-  height: 100px;
+  min-height: 100px;
+  height: 400px;
 }
 
 .projects {
-  max-width: 1200px;
+  max-width: 80vw;
   margin-inline: auto;
 }
 
@@ -226,7 +280,7 @@ main {
 
 .my-projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 400px));
   gap: 15px;
   padding: 20px;
   justify-content: center;
@@ -277,11 +331,13 @@ main {
   border-radius: 12px;
 }
 
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+.course-flex {
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   margin-bottom: 1rem;
+  list-style: none;
+  padding: 0;
 }
 
 .course-item {
@@ -313,10 +369,164 @@ main {
 
 /* ---- contacts ---- */
 
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.contacts .section-title {
+  text-align: center;
+}
+
 .contacts-form {
   display: flex;
   flex-direction: column;
-  margin: 5px;
+  width: 100%;
+  max-width: 768px;
+  gap: 1rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.contacts-form label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.contacts-form input,
+.contacts-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.contacts-map {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.contacts-map-section .button {
+  width: 100%;
+  padding: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  align-self: center;
+}
+
+#contacts-form-button {
+  max-width: 200px;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contacts-form-button:hover {
+  background: #1d4ed8;
+}
+
+.contacts-info {
+  text-align: center;
+}
+
+.contacts-info-text p {
+  margin: 0.25rem 0;
+}
+
+.contacts-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  margin: 3vw;
+  padding-bottom: 3vw;
+  padding-top: 3vw;
+  gap: 0;
+
+  border-top: 2px solid #c7cdd5;
+  border-bottom: 2px solid #c7cdd5;
+}
+
+.contacts-email-section {
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+  padding-left: 2rem;
+
+}
+
+.contacts-email-flex {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.contacts-form-section {
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+
+  padding-right: 2rem;
+  border-right: 2px solid #c7cdd5;
+}
+
+.contacts-map-section {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+
+
+  width: 100%;
+  max-width: 400px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-right: 2px solid #c7cdd5;
+}
+
+@media (max-width: 1200px) {
+  .contacts-flex {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 400px);
+  }
+
+  .contacts-email-section {
+    padding-left: 0;
+  }
+
+  .contacts-map-section {
+    padding-right: 0;
+    border-right: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .contacts-flex {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(1, minmax(200px, 500px));
+  }
+
+  .contacts-form-section {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  .contacts-map-section {
+    padding-left: 0;
+  }
 }
 
 .contacts-form-message {
@@ -324,23 +534,33 @@ main {
 }
 
 .form-message-textarea {
-  width: max(30vw, 60vh);
-  min-width: 300px;
-  min-height: 150px;
+  width: 100%;
+  min-width: 184.6px;
+  min-height: 170px;
 }
 
 #contacts-form-button {
-  width: 25vw;
   max-width: 200px;
   margin: 5px 0 5px 0;
 }
 
 .contacts-info {
-  margin: 5px;
+  justify-self: end;
+  padding: 5vw;
+  padding-bottom: 0;
 }
 
 .contacts-info-text {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
   margin: 0;
+}
+
+.contacts-info-text-column {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 /* ---- footer ---- */
@@ -366,6 +586,11 @@ main {
     max-width: 300px;
   }
 
+  .main-info-photo img{
+    height: auto;
+    object-fit: cover;
+  }
+
   .diary-courses {
     grid-template-columns: 1fr;
   }
@@ -373,18 +598,26 @@ main {
 
 @media (max-width: 500px) {
   .nav {
-    position: static; /* отменяем sticky */
-    box-shadow: none; /* можно убрать тень, если нужно */
+    position: static;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
   }
 
-  .nav-list {
-    flex-direction: column; /* вертикальное расположение */
-    align-items: center;    /* центрируем элементы */
+  .main-nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .second-nav-list {
+    align-items: center;
   }
 
   .nav-link {
-    padding: 10px 0;        /* уменьшаем padding */
-    width: 100%;            /* растягиваем на всю ширину */
+    padding: 10px 0;
+    /* уменьшаем padding */
+    width: 100%;
+    /* растягиваем на всю ширину */
     text-align: center;
   }
 
