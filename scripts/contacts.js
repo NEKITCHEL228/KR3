@@ -8,5 +8,6 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.3
 });
 
-const hiddenElement4 = document.querySelector('.projects');
-observer.observe(hiddenElement4);
+const hiddenElement7 = document.querySelector('.contacts');
+
+observer.observe(hiddenElement7);

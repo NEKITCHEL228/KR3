@@ -15,6 +15,14 @@ html {
   box-sizing: border-box;
 }
 
+ul {
+  padding: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
 body {
   margin: 0;
   font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sansserif;
@@ -44,8 +52,6 @@ body {
   inset-block-start: 1rem;
 }
 
-/* ---- focus-visible ---- */
-
 :focus-visible {
   outline: 3px solid #2563eb;
   outline-offset: 2px;
@@ -73,17 +79,6 @@ textarea {
 
 .button:hover {
   background-color: #1d4ed8;
-}
-
-/* Touch targets */
-@media (pointer: coarse) {
-
-  a,
-  button,
-  .nav__link {
-    min-height: 44px;
-    padding: 0.75rem 1rem;
-  }
 }
 
 /* --- header --- */
@@ -159,8 +154,11 @@ main {
 .main {
   max-width: 80vw;
   margin-inline: auto;
-  /* центрирование */
   width: 100%;
+}
+
+.main-skills-area {
+  opacity: 0;
 }
 
 .main-skills-area h2,
@@ -172,30 +170,165 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+
+  opacity: 0;
 }
 
 /* ---- responsive hero ---- */
 
 .main-info-photo {
-  flex: 0 1 700px;
-  max-width: 100%;
+  flex: 1;
   padding: 15px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .main-info-photo img {
-  width: 100%;
-  height: 20rem;
-  object-fit:cover;
-  aspect-ratio: 3 / 4;
+  display: block;
   border-radius: .5rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ---- text ---- */
 
 .main-info-info {
-  flex: 1 1 300px;
-  padding: 30px 30px 10px 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 15px;
+  font-size: clamp(0.5rem, 1.3vw, 1.7rem);
+  max-width: 50%;
 }
+
+.ach-explanation {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+  border-radius: .75rem;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+  transition: background-color 0.8s ease;
+}
+
+.effect {
+  background-color: #1d4ed8;
+}
+
+.ach-explanation p {
+  margin: 0;
+  padding: 1rem;
+}
+
+.main-info-info-txt {
+  font-size: clamp(0.5rem, 1.3vw, 1.7rem);
+}
+
+.main-info-info-text {
+  padding: 0px 15px 10px 30px;
+}
+
+.main-info-info-text h2 {
+  margin-top: 0;
+}
+
+.main-info-info-ach {
+  font-size: clamp(0.5rem, 1.3vw, 1.7rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.main-info-info-achievments {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  padding: 15px 15px 10px 30px;
+}
+
+.ach-button {
+  background: #2563eb;
+  border: none;
+  color: #fff;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  height: calc(4*clamp(2rem, 3vw, 5rem));
+
+  border-radius: .5rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: 0.2s;
+}
+
+.ach-button img {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#prev-button img {
+  transform: rotate(90deg);
+}
+
+#next-button img {
+  transform: rotate(-90deg);
+}
+
+.ach-button:hover {
+  background: #1d4ed8;
+}
+
+.achievment-view {
+  width: calc(4*clamp(2rem, 3vw, 5rem));
+  height: calc(4*clamp(2rem, 3vw, 5rem));
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .75rem;
+
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+}
+
+.achievment-view .button {
+  width: 100%;
+  height: 100%;
+}
+
+.ach-list {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+.ach-item {
+  width: calc(4*clamp(2rem, 3vw, 5rem));
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: .75rem;
+  overflow: hidden;
+
+  flex-shrink: 0;
+}
+
+.ach-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 
 /* ---- skills ---- */
 
@@ -241,11 +374,12 @@ main {
   display: block;
   max-width: 80vw;
   margin-inline: auto;
+  opacity: 0;
 }
 
 .best-projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 400px));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
   gap: 15px;
   padding: 20px;
 
@@ -264,29 +398,28 @@ main {
 .project-button {
   width: 100%;
   min-height: 100px;
-  height: 400px;
+  aspect-ratio: 1 / 1;
 }
 
 .projects {
   max-width: 80vw;
   margin-inline: auto;
+  opacity: 0;
 }
 
 .my-projects-area {
   width: 100%;
   overflow-x: hidden;
-  /* фикс выезда вправо */
 }
 
 .my-projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 400px));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
   gap: 15px;
   padding: 20px;
   justify-content: center;
 
   width: 100%;
-  /* важно! */
   box-sizing: border-box;
 }
 
@@ -295,8 +428,10 @@ main {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  /* чтобы кнопки не съезжали */
 }
+
+/* ---- animations ----*/
+
 
 /* ---- hidden utility ---- */
 
@@ -309,6 +444,14 @@ main {
 }
 
 /* ---- diary ---- */
+
+.diary-progress{
+  opacity: 0;
+}
+
+.diary-courses-area{
+  opacity: 0;
+}
 
 .container {
   max-width: 72rem;
@@ -346,7 +489,6 @@ main {
   border-radius: .75rem;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   min-width: 0;
-  /* разрешаем содержимому ужиматься */
 }
 
 .course-item label {
@@ -374,6 +516,7 @@ main {
   flex-direction: column;
   gap: 2rem;
   margin: 0 auto;
+  opacity: 0;
 }
 
 .contacts .section-title {
@@ -494,41 +637,6 @@ main {
   border-right: 2px solid #c7cdd5;
 }
 
-@media (max-width: 1200px) {
-  .contacts-flex {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2, 400px);
-  }
-
-  .contacts-email-section {
-    padding-left: 0;
-  }
-
-  .contacts-map-section {
-    padding-right: 0;
-    border-right: 0;
-  }
-}
-
-@media (max-width: 850px) {
-  .contacts-flex {
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    grid-template-columns: repeat(1, minmax(200px, 500px));
-  }
-
-  .contacts-form-section {
-    border-right: 0;
-    padding-right: 0;
-  }
-
-  .contacts-map-section {
-    padding-left: 0;
-  }
-}
-
 .contacts-form-message {
   display: contents;
 }
@@ -574,6 +682,52 @@ main {
 
 /* ---- responsive adjustments ---- */
 
+/* Touch targets */
+@media (pointer: coarse) {
+
+  a,
+  button,
+  .nav__link {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contacts-flex {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 400px);
+  }
+
+  .contacts-email-section {
+    padding-left: 0;
+  }
+
+  .contacts-map-section {
+    padding-right: 0;
+    border-right: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .contacts-flex {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(1, minmax(200px, 500px));
+  }
+
+  .contacts-form-section {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  .contacts-map-section {
+    padding-left: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .main-info {
     flex-direction: column;
@@ -581,19 +735,23 @@ main {
     text-align: center;
   }
 
-  .main-info-photo {
-    flex-basis: auto;
-    max-width: 300px;
+  .main-info-info-txt {
+    font-size: clamp(0.8rem, 4vw, 1rem);
   }
 
-  .main-info-photo img{
-    height: auto;
-    object-fit: cover;
+  .main-info-info-ach {
+    font-size: clamp(0.8rem, 4vw, 1rem);
   }
+
+  .main-info-info-achievments {
+    padding-left: 15px;
+  }
+
 
   .diary-courses {
     grid-template-columns: 1fr;
   }
+
 }
 
 @media (max-width: 500px) {
@@ -625,4 +783,21 @@ main {
     margin: 0;
     width: 100%;
   }
+}
+
+/* ---- Animations ---- */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.showSlideDown {
+  animation: slideDown 0.5s ease-out forwards 0.5s;
 }
